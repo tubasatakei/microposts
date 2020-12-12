@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /*
+    /**
     |--------------------------------------------------------------------------
     | Register Controller
     |--------------------------------------------------------------------------
@@ -50,5 +50,3 @@ class RegisterController extends Controller
     }
 }
 
-Route::get('signup','Auth\RegisterController@showResistrationForm')->name('signup.get');
-Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
