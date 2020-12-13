@@ -18,7 +18,7 @@ class MicropostsController extends Controller
                 'microposts' => $microposts,
             ];
         }
-    
+
         return view('welcome', $data);
     }
     

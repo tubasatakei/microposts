@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     public function index()
     {
@@ -27,6 +27,7 @@ class UserController extends Controller
         
         return view('users.show', [
             'user' => $user,
+            'microposts' => $microposts,
         ]);
     }
 }
