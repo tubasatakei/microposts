@@ -39,7 +39,7 @@ class UsersController extends Controller
         
         $followings = $user->followings()->paginate(10);
         
-        return view('users.followings',[
+        return view('users.followings', [
             'user' => $user,
             'users' => $followings,
         ]);
@@ -53,7 +53,7 @@ class UsersController extends Controller
         
         $followers = $user->followers()->paginate(10);
         
-        return view('users.followers',[
+        return view('users.followers', [
             'user' => $user,
             'users' => $followers,
         ]);
@@ -69,7 +69,7 @@ class UsersController extends Controller
         
         return view('users.favorites',[
             'user' => $user,
-            'users' => $favorites,
+            'microposts' => $favorites,
         ]);
     }
 }

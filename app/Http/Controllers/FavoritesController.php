@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-class UserFavoriteController extends Controller
+class FavoriteController extends Controller
 {
     public function store($id)
     {
-        \Auth::User()->favorite($id);
+        \Auth::user()->favorite($micropostId);
         return back();
     }
 
     public function destroy($id)
     {
-        \Auth::user()->unfavorite($id);
+        \Auth::user()->unfavorite($micropostId);
         return back();
     }
 }
