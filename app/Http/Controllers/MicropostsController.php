@@ -39,7 +39,7 @@ class MicropostsController extends Controller
     {
         $micropost = \App\Micropost::findOrFail($id);
         
-        if (\Auth::id() === $micropost->micropost_id) {
+        if (\Auth::id() === $micropost->user_id) {
             $micropost->delete();
         }
         

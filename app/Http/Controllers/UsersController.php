@@ -59,9 +59,9 @@ class UsersController extends Controller
         ]);
     }
     
-    public function favorites($id)
+    public function favorites($micropostId)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($micropostId);
         
         $user->loadRelationshipCounts();
         
