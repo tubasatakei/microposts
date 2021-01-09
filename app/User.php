@@ -101,7 +101,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Micropost::class, 'user_micropost','user_id','micropost_id')->withTimestamps();
     }
     
-    public function favorite($userId)
+    public function favorite($micropostId)
     {
         $exist = $this->is_favorite($micropostId);
         $its_me = $this->id == $micropostId;
@@ -109,15 +109,15 @@ class User extends Authenticatable
         if ($exist || $its_me) {
             return false;
         } else {
-            $this->favorites()->attach($userId);
+            $this->favorites()->attach($micropostId);
             return true;
         }
     }
         
-    public function unfavorite($userId)
+    public function unfavorite($micropostId)
     {
         $exist = $this->is_favorite($micropostId);
-        $its_me = $this->id == $userId;
+        $its_me = $this->id ==$micropostId;
         
         if ($exist && !$its_me) {
             $this->favorites()->detach($micropostId);

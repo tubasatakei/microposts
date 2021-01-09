@@ -7,5 +7,3 @@
     </div>
 </div>
 @include('user_follow.follow_button')
-
-@include('user_favorite.favorite_button')

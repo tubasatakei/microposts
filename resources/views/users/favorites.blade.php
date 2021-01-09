@@ -7,8 +7,11 @@
         </aside>
         <div class="col-sm-8">
             @include('users.navtabs')
+            @include('user_favorite.favorite_button')
+          
             @include('microposts.microposts')
             
         </div>
     </div>
 @endsection
+
